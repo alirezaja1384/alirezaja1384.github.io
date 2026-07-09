@@ -1,2 +1,7 @@
-export const RESUME_DATA_URL =
-    "https://alirezaja1384-resume-api.liara.run/v1/resume/profile/";
+const resumeDataUrl = process.env.REACT_APP_RESUME_DATA_URL;
+
+if (!resumeDataUrl) {
+    throw new Error("REACT_APP_RESUME_DATA_URL is required");
+}
+
+export const RESUME_DATA_URL = resumeDataUrl;
