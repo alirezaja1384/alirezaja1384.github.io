@@ -1,16 +1,21 @@
 {
     "compilerOptions": {
-        "target": "es5",
-        "lib": ["dom", "dom.iterable", "esnext"],
+        "target": "es6",
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "esnext"
+        ],
         "allowJs": true,
         "skipLibCheck": true,
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
         "strict": true,
+        "ignoreDeprecations": "6.0",
         "forceConsistentCasingInFileNames": true,
         "noFallthroughCasesInSwitch": true,
-        "module": "esnext",
-        "moduleResolution": "node",
+        "module": "node16",
+        "moduleResolution": "node16",
         "resolveJsonModule": true,
         "isolatedModules": true,
         "noImplicitReturns": true,
@@ -22,5 +27,9 @@
         "jsx": "react-jsx",
         "baseUrl": "."
     },
-    "include": ["src", "src/global.d.ts", "src/custom.d.ts"]
+    "include": [
+        "src",
+        "src/global.d.ts",
+        "src/custom.d.ts"
+    ]
 }
