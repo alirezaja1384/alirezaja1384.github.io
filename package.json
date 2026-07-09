@@ -16,7 +16,7 @@
         "@types/node": "^16.18.38",
         "@types/react": "^18.2.14",
         "@types/react-dom": "^18.2.6",
-        "axios": "^1.4.0",
+        "axios": "^1.18.1",
         "axios-case-converter": "^1.1.0",
         "dayjs": "^1.11.9",
         "jalaliday": "^2.3.0",
