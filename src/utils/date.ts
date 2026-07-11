@@ -6,14 +6,23 @@ import { formatDigits } from "./text";
 dayjs.extend(utc);
 dayjs.extend(jalaliday);
 
-const toLocalDate = (date: string, type: "short" | "long" = "long"): string =>
+const toLocalDate = (
+    date: string,
+    type: "short" | "long" | "month-year" = "long"
+): string =>
     formatDigits(
         dayjs
             .utc(date)
             .local()
             .calendar("jalali")
             .locale("fa")
-            .format(type === "long" ? "D MMMM YYYY، ساعت HH:mm" : "YYYY/MM/DD"),
+            .format(
+                type === "long"
+                    ? "D MMMM YYYY، ساعت HH:mm"
+                    : type === "month-year"
+                    ? "MMMM YYYY"
+                    : "YYYY/MM/DD"
+            ),
         "persian"
     );
 

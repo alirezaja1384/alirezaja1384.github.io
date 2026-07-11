@@ -4,7 +4,7 @@ import { toLocalDate, formatDigits, calculateAge } from "src/utils";
 
 const employmentStatusMap: Record<EmploymentStatus, string> = {
     looking_for_job: "در جستجوی کارم",
-    employed: "استخدام شده ام",
+    employed: "در جستجوی کار نیستم",
     freelancer: "فریلنسرم",
 };
 
@@ -21,7 +21,7 @@ function MoreAboutMeComponent({
             <ul className="m-1">
                 {birthDate && (
                     <li>
-                        متولد {toLocalDate(birthDate, "short")}{" "}
+                        متولد {toLocalDate(birthDate, "month-year")}{" "}
                         {formatDigits(` (${calculateAge(birthDate)} سال)`)}
                     </li>
                 )}

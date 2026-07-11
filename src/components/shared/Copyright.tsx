@@ -11,35 +11,35 @@ const copyright: {
     text: string;
     icon: React.ReactElement;
 }[] = [
-    {
-        id: "online-cv",
-        text: "online-cv",
-        icon: <GitHubIcon />,
-        href: "https://github.com/sharu725/online-cv",
-    },
-    {
-        id: "user-icon",
-        text: "Smashicons",
-        icon: <AppsIcon />,
-        href: "https://www.flaticon.com/authors/smashicons",
-    },
-    {
-        id: "loading-icon",
-        text: "loading.io",
-        icon: <HourglassBottomIcon />,
-        href: "https://loading.io/",
-    },
-    {
-        id: "resume-icon",
-        text: "Icons8",
-        icon: <ArticleIcon />,
-        href: "https://icons8.com/icon/115648/resume",
-    },
-];
+        {
+            id: "online-cv",
+            text: "online-cv",
+            icon: <GitHubIcon />,
+            href: "https://github.com/sharu725/online-cv",
+        },
+        {
+            id: "user-icon",
+            text: "Smashicons",
+            icon: <AppsIcon />,
+            href: "https://www.flaticon.com/authors/smashicons",
+        },
+        {
+            id: "loading-icon",
+            text: "loading.io",
+            icon: <HourglassBottomIcon />,
+            href: "https://loading.io/",
+        },
+        {
+            id: "resume-icon",
+            text: "Icons8",
+            icon: <ArticleIcon />,
+            href: "https://icons8.com/icon/115648/resume",
+        },
+    ];
 
 function CopyrightComponent({ theme }: { theme: "white" | "blue" }) {
     return (
-        <div className="mb-4">
+        <div className="mb-4 print:hidden">
             <h2
                 className={
                     "font-bold text-xl " +

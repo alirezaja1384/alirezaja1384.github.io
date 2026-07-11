@@ -15,7 +15,7 @@ function WorkExperiencesComponent({
 }) {
     return (
         <NoBreak>
-            <div className="m-2">
+            <div className="mx-2 my-5">
                 <h2 className="font-bold text-xl text-blue">
                     {icon} تجربه ها کاری من:
                 </h2>
@@ -41,9 +41,9 @@ function WorkExperienceItem({ experience }: { experience: WorkExperience }) {
                 </h4>
 
                 <span className="badge badge-gray text-sm md:text-base">
-                    از {toLocalDate(experience.startDate, "short")} تا{" "}
+                    از {toLocalDate(experience.startDate, "month-year")} تا{" "}
                     {experience.endDate
-                        ? toLocalDate(experience.endDate, "short")
+                        ? toLocalDate(experience.endDate, "month-year")
                         : "الان"}
                 </span>
             </div>
@@ -54,7 +54,7 @@ function WorkExperienceItem({ experience }: { experience: WorkExperience }) {
                         <Fragment key={`${link.title}:${link.title}`}>
                             {" "}
                             |{" "}
-                            <a className="no-style" href={link.url}>
+                            <a target="_blank" rel="noreferrer" className="no-style" href={link.url}>
                                 <LaunchIcon fontSize="small" /> {link.title}
                             </a>
                         </Fragment>

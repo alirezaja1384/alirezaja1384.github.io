@@ -19,15 +19,10 @@ function ResumeSidebarComponent({
 }) {
     return (
         <div id="sidebar">
-            <UserInfoComponent user={user} jobTitle={jobTitle} />
+            <UserInfoComponent user={user} jobTitle={jobTitle} introduction={introduction} />
 
             <div className="flex flex-col justify-between h-full py-5 md:py-2 px-4">
                 <div>
-                    {introduction && (
-                        <div className="w-full py-1">
-                            <p className="text-center mx-2">{introduction}</p>
-                        </div>
-                    )}
 
                     <MoreAboutMeComponent
                         birthDate={user.birthDate || undefined}

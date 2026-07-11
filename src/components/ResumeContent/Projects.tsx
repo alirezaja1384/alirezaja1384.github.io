@@ -28,11 +28,10 @@ function ProjectsComponent({
 function ProjectItem({ project }: { project: Project }) {
     return (
         <NoBreak>
-            <div className="flex flex-wrap justify-between my-3">
+            <div className="flex flex-wrap justify-between my-5">
                 <div
-                    className={`flex flex-col justify-between ${
-                        project.links ? "md:w-3/4" : ""
-                    }`}
+                    className={`flex flex-col justify-between ${project.links.length ? "md:w-3/4" : "md:w-11/12"
+                        }`}
                 >
                     <div className="mb-2">
                         <h4 className="font-bold text-lg">{project.name}</h4>
@@ -51,13 +50,16 @@ function ProjectItem({ project }: { project: Project }) {
 }
 
 function ProjectLinksComponent({ links }: { links: Project["links"] }) {
+    if (links.length < 1)
+        return null;
+
     return (
         <div className="pr-2 w-full md:w-1/4">
             <h4 className="text-gray-700 font-bold">پیوندها</h4>
             <ul>
                 {links.map((lnk) => (
                     <li key={lnk.url}>
-                        <a href={lnk.url}>
+                        <a target="_blank" rel="noreferrer" href={lnk.url}>
                             <LaunchIcon fontSize="small" /> {lnk.title}
                         </a>
                     </li>
