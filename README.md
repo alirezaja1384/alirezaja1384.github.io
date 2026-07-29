@@ -1,5 +1,16 @@
 # Getting Started with Create React App
 
+## Configuration
+
+Create a `.env` file with the API origin and the profile slug to load by default:
+
+```
+REACT_APP_API_BASE_URL=https://resume-api.alirezaja1384.ir
+REACT_APP_DEFAULT_SLUG=fa
+```
+
+The application requests `${REACT_APP_API_BASE_URL}/v2/resume/public-profiles/${REACT_APP_DEFAULT_SLUG}/`.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
