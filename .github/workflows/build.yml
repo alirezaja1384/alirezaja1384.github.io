@@ -1,0 +1,32 @@
+name: Build
+
+on:
+  pull_request:
+  merge_group:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build application
+    runs-on: ubuntu-latest
+    env:
+      REACT_APP_API_BASE_URL: ${{ vars.REACT_APP_API_BASE_URL }}
+      REACT_APP_DEFAULT_SLUG: ${{ vars.REACT_APP_DEFAULT_SLUG }}
+      REACT_APP_RESUME_DATA_URL: ${{ vars.REACT_APP_RESUME_DATA_URL }}
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build
