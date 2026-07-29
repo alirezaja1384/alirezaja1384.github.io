@@ -2,21 +2,18 @@ import "./css/app.css";
 
 import axios from "axios";
 import { useEffect, useState } from "react";
-import applyCaseMiddleware from "axios-case-converter";
 
 import ResumeComponent from "src/components/Resume";
 import LoadingComponent from "src/components/Loading";
 
-import { RESUME_DATA_URL } from "src/config";
+import { getPublicProfileUrl } from "src/config";
 import { ResumeProfile } from "./types/resumeProfile";
-
-const client = applyCaseMiddleware(axios.create());
 
 function App() {
     const [resume, setResume] = useState<ResumeProfile | null>(null);
 
     const fetchResume = () => {
-        client.get<ResumeProfile>(RESUME_DATA_URL).then((response) => {
+        axios.get<ResumeProfile>(getPublicProfileUrl()).then((response) => {
             setResume(response.data);
         });
     };
