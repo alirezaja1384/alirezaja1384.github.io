@@ -17,7 +17,6 @@
         "@types/react": "^18.3.31",
         "@types/react-dom": "^18.3.7",
         "axios": "^1.18.1",
-        "axios-case-converter": "^1.1.1",
         "dayjs": "^1.11.21",
         "jalaliday": "^2.3.0",
         "material-icons": "^1.13.14",
